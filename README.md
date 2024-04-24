@@ -1,2 +1,2 @@
 # cargaExcelBD
-Prototipo para cargar archivo excel a la base de datos
+Demostración de Aplicación de Express.js para Cargar Archivo Excel a la Base de Datos MySQL
