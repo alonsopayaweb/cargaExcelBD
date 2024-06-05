@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preraracion Subida</title>
+</head>
+
+<body>
+  <h1>Preparacion Subida</h1>
+
+  <!-- Aquí se muestra la tabla -->
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Producto ID</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Stock</th>
+        <th>Periodo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí se generan las filas de la tabla utilizando los datos recibidos -->
+      {{#each data}}
+      {{#eq periodo "Marzo"}}
+      <tr style="background-color: #ff4040;">
+        {{else}}
+        {{#eq periodo "Abril"}}
+      <tr style="background-color: #8fff8f;">
+        {{else}}
+      <tr>
+        {{/eq}}
+        {{/eq}}
+        <td>{{ id }}</td>
+        <td>{{ nombre }}</td>
+        <td>{{ precio }}</td>
+        <td>{{ cantidad }}</td>
+        <td>{{ stock }}</td>
+        <td>{{ periodo }}</td>
+      </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+  <div style="margin-top: 20px;">
+    <form action="/actualizar-existencias" method="post">
+      <button type="submit" style="width:100px;height:50px;">Actualizar Inventario</button>
+    </form>
+  </div>
+</body>
+
+</html>
