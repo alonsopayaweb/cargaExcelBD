@@ -16,10 +16,10 @@ hbs.registerHelper('eq', function (a, b, options) {
 
 // Configura la conexión a la base de datos MySQL
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'stockdbsys',
-    password: 'Stockdb19250825',
-    database: 'protocarga'
+    host: process.ENV.HOST,
+    user: process.ENV.DB_USER,
+    password: process.ENV.DB_PASS,
+    database: process.ENV.DB_NAME'
 });
 
 // Conecta a la base de datos MySQL
